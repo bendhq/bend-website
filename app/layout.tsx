@@ -15,9 +15,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Bend | Backend Scaffolder",
-  description: "A production-ready backend scaffolder that creates clean, optimized, secure backend apps instantly.",
-    generator: 'v0.app'
+  title: "Bend | Backend Generator",
+  description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
 }
 
 export default function RootLayout({
