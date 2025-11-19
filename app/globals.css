@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Restored font variables to match Next.js font configuration */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  --color-background: #1b1b1f;
+  --color-foreground: rgba(255, 255, 255, 0.87);
+  
+  --color-primary: #257ee1;
+  --color-primary-foreground: #ffffff;
+  
+  --color-secondary: #2f2f32;
+  --color-secondary-foreground: rgba(255, 255, 255, 0.87);
+  
+  --color-muted: #2f2f32;
+  --color-muted-foreground: rgba(255, 255, 255, 0.6);
+  
+  --color-accent: #257ee1;
+  --color-accent-foreground: #ffffff;
+  
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.1);
+  --color-ring: #257ee1;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  /* Hide scrollbars for all browsers while maintaining scrollability */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  /* Disable horizontal scrolling and ensure full height */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  /* Remove number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    display: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  /* Prevent any spin buttons or browser UI from appearing during animations */
+  button, input, select, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  button::-webkit-inner-spin-button,
+  button::-webkit-outer-spin-button {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to bottom right, #257ee1, #00c2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-gradient-hero {
+    background: radial-gradient(circle at 50% 0%, rgba(37, 126, 225, 0.15) 0%, transparent 50%);
+  }
+
+  .glass {
+    background: rgba(30, 30, 32, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Custom 3D Cube Animations */
+@keyframes spin-slow {
+  0% { transform: rotateX(-20deg) rotateY(0deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Removed auto-rotation, now controlled by mouse interaction */
+.cube-container {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  /* Removed animation - now controlled by React state */
+}
+
+.cube-layer {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 50px;
+  top: 50px;
+  transform-style: preserve-3d;
+}
+
+.cube-face {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  background: rgba(37, 126, 225, 0.1);
+  border: 1px solid rgba(37, 126, 225, 0.5);
+  box-shadow: 0 0 15px rgba(37, 126, 225, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.face-front  { transform: rotateY(0deg) translateZ(100px); }
+.face-back   { transform: rotateY(180deg) translateZ(100px); }
+.face-right  { transform: rotateY(90deg) translateZ(100px); width: 200px; }
+.face-left   { transform: rotateY(-90deg) translateZ(100px); width: 200px; }
+.face-top    { transform: rotateX(90deg) translateZ(20px); height: 200px; }
+.face-bottom { transform: rotateX(-90deg) translateZ(20px); height: 200px; }
