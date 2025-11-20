@@ -84,7 +84,7 @@ export function FeatureShowcase() {
               viewport={{ once: true }}
               className="mb-1"
             >
-              <span className="text-gray-500">[2023-10-25 {log.time}]</span> <span className={log.color}>{log.level}</span>: {log.msg}
+              <span className="text-gray-500">[2069-06-09 {log.time}]</span> <span className={log.color}>{log.level}</span>: {log.msg}
             </motion.div>
           ))}
         </div>
