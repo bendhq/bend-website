@@ -27,11 +27,20 @@ export const metadata: Metadata = {
     siteName: "Bend",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/design-mode/bend_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Bend | Backend Generator",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Bend | Backend Generator",
     description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
+    images: ["/images/design-mode/bend_logo.png"],
   },
 }
 
