@@ -17,8 +17,22 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bendhq.org'),
   title: "Bend | Backend Generator",
   description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
+  openGraph: {
+    title: "Bend | Backend Generator",
+    description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
+    url: "https://bendhq.org",
+    siteName: "Bend",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bend | Backend Generator",
+    description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
+  },
 }
 
 export default function RootLayout({
