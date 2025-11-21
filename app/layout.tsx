@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/design-mode/bend_logo.png",
+        url: "/images/design-mode/bend.png",
         width: 1200,
         height: 630,
         alt: "Bend | Backend Generator",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bend | Backend Generator",
     description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
-    images: ["/images/design-mode/bend_logo.png"],
+    images: ["/images/design-mode/bend.png"],
   },
 }
 
