@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bendhq.org'),
-  title: "Bend | Backend Generator",
+  title: "Bend | Production-Ready Backend Bundler",
   description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
   openGraph: {
-    title: "Bend | Backend Generator",
+    title: "Bend | Production-Ready Backend Bundler",
     description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
     url: "https://bendhq.org",
     siteName: "Bend",
@@ -32,16 +32,24 @@ export const metadata: Metadata = {
         url: "/images/design-mode/bend.png",
         width: 1200,
         height: 630,
-        alt: "Bend | Backend Generator",
+        alt: "Bend | Production-Ready Backend Bundler",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bend | Backend Generator",
+    title: "Bend | Production-Ready Backend Bundler",
     description: "A production-ready backend generator that creates clean, optimized, secure backend apps instantly.",
     images: ["/images/design-mode/bend.png"],
   },
+  keywords: ["backend bundler", "backend generator", "nodejs", "fastify", "typescript", "database", "orm", "api"],
+  authors: [{ name: "Bend Team", url: "https://bendhq.org" }],
+  creator: "Bend Team",
+  publisher: "Bend",
+  robots: "index, follow",
+  alternates: { canonical: "https://bendhq.org" },
+  applicationName: "Bend",
+  referrer: "origin-when-cross-origin",
 }
 
 export default function RootLayout({
@@ -61,6 +69,24 @@ export default function RootLayout({
           <Analytics />
         </main>
         <SiteFooter />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Bend",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "description": "A production-ready backend bundler that creates clean, optimized, secure backend apps instantly."
+            })
+          }}
+        />
       </body>
     </html>
   );

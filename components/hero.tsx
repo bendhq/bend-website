@@ -24,7 +24,7 @@ export function Hero() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
               <span className="text-gradient">Bend</span>
               <br />
-              <span className="text-white">Backend Generator </span>
+              <span className="text-white">Backend Bundler </span>
             </h1>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-[600px] mb-8 leading-relaxed">
