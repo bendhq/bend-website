@@ -126,7 +126,7 @@ function AnimatedScene() {
           vec3 pos = aBasePosition + vec3(jitterX, jitterY, 0.0) + mouseOffset;
           
           vec4 mvPosition = modelViewMatrix * vec4( pos, 1.0 );
-          gl_PointSize = 5.0 * ( 400.0 / -mvPosition.z );
+          gl_PointSize = 5.0 * ( 400.0 / max(-mvPosition.z, 0.0001) );
           gl_Position = projectionMatrix * mvPosition;
           
           // Twinkle effect
@@ -220,21 +220,15 @@ function AnimatedScene() {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            array={basePositions}
-            count={PARTICLE_COUNT}
-            itemSize={3}
+            args={[basePositions, 3]}
           />
           <bufferAttribute
             attach="attributes-aBasePosition"
-            array={basePositions}
-            count={PARTICLE_COUNT}
-            itemSize={3}
+            args={[basePositions, 3]}
           />
           <bufferAttribute
             attach="attributes-aPhase"
-            array={phases}
-            count={PARTICLE_COUNT}
-            itemSize={1}
+            args={[phases, 1]}
           />
         </bufferGeometry>
         <primitive object={starMaterial} attach="material" />
