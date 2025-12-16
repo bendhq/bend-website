@@ -30,7 +30,7 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="https://github.com/bendhq/bend" target="_blank" className="hover:text-[#257ee1] transition-colors">GitHub</Link></li>
               <li><Link href="https://github.com/bendhq/bend/issues" target="_blank" className="hover:text-[#257ee1] transition-colors">Issues</Link></li>
-              <li><Link href="https://www.npmjs.com/package/create-bend" target="_blank" className="hover:text-[#257ee1] transition-colors">npm Package</Link></li>
+              <li><Link href="https://www.npmjs.com/package/bendjs" target="_blank" className="hover:text-[#257ee1] transition-colors">npm Package</Link></li>
             </ul>
           </div>
           
